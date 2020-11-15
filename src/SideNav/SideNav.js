@@ -13,7 +13,7 @@ import { CardActions } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
-        minHeight: window.innerHeight,
+        // minHeight: window.innerHeight,
         backgroundColor: 'rgba(0,0,0,.5)',
         
     },
@@ -68,7 +68,7 @@ function SideNav(props) {
             <Grid container wrap='nowrap' justify='flex-start' alignItems='center' >
                 <Grid item xs={8} sm={5} md={4} lg={2} align='center'>
 
-                    <Card className={classes.root} style={{ height: size.height}}>
+                    <Card className={classes.root} style={{ height: size.width>900?size.height:'auto'}}>
                         <Grid item xs={10}>
                             <Avatar alt="Headshot" src="headshot.jpg" className={classes.media} />
                             <CardContent>
