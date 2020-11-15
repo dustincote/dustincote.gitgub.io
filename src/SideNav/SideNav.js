@@ -71,7 +71,7 @@ function SideNav(props) {
 
                     <Card className={classes.root} style={{ height: size.height}}>
                         <Grid item xs={10}>
-                            <Avatar alt="Headshot" src="/headshot.jpg" className={classes.media} />
+                            <Avatar alt="Headshot" src="headshot.jpg" className={classes.media} />
                             <CardContent>
                                 <Typography variant='h3' className={classes.name}>Dustin Cote</Typography>
                                 <Typography className={classes.body}>Full Stack Developer</Typography>
