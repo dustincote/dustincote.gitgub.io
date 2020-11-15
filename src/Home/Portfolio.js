@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import HomeNav from '../HomeNav/HomeNav';
 
 
 const useStyles = makeStyles({
@@ -97,46 +98,17 @@ export default  function Portfolio(props) {
             width: window.innerWidth,
             height: window.innerHeight
         });
-        console.log(`Width: ${window.innerWidth} Height: ${window.innerHeight}`);
+        // console.log(`Width: ${window.innerWidth} Height: ${window.innerHeight}`);
     }
 
-    const goToGitHub = () => {
-        window.open("https://github.com/dustincote");
-    };
 
-    const goToLinkedIn = () => {
-        window.open("https://www.linkedin.com/in/dustin-t-cote/");
-    };
-
-    const goToEmail = () => {
-        window.location.href = "mailto:dustincote@hotmail.com?subject=More Info Requested%20From%20Portfolio";
-    }
 
     return(
 
         <div>
-            <Grid container wrap='nowrap' justify='flex-start' alignItems='center' >
-                <Grid item xs={8} sm={5} md={4} lg={3} align='center'>
-                    
-                        <Card className={classes.root} style={{height:size.height, position:'fixed', top:0, maxWidth: 300}}>
-                        <Grid item xs={10}>
-                            <Avatar alt="Headshot" src="headshot.jpg" className={classes.media}/>
-                            <CardContent>
-                                <Typography variant='h3' className={classes.name}>Dustin Cote</Typography>
-                                <Typography className={classes.body}>Full Stack Developer</Typography><br/>
-                                <Typography className={classes.body}> I will be graduating from Emerging Digital Academy
-                                in the beginning of December 2020, I have a passion for technology and a desire to 
-                                learn new things.
-                                </Typography><br/>
-                                <Typography className={classes.body}> Contact Me:</Typography>
-                                <Typography className={classes.body}>dustincote@hotmail.com</Typography>
-                                <IconButton onClick={goToLinkedIn} className={classes.body}><LinkedInIcon/></IconButton>
-                                <IconButton onClick={goToGitHub} className={classes.body}><GitHubIcon/></IconButton>
-                                <IconButton onClick={goToEmail} className={classes.body}><ContactMailIcon/></IconButton>
-
-                            </CardContent>
-                        </Grid>
-                        </Card>
+            <Grid direction={size.width > 900 ? 'row': 'column'} container wrap='nowrap' justify='flex-start' alignItems='center' >
+                <Grid item xs={10} sm={10} md={4} lg={3} align='center'>
+                    <HomeNav size={size}/>  
                 </Grid>
                 <Grid container justify='center' alignItems='center'>
                     {projects.map(project =>  <Grid key={project.name} item xs={12} md={12} lg={6} align='center' >

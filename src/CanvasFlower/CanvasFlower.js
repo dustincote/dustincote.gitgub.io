@@ -30,14 +30,14 @@ const CanvasFlower = (props) => {
         const c = canvas.getContext('2d');
         c.globalCompositeOperation = 'destination-over';
 
-
+        let stop = true
         let number = 0;
         let scale = 10;
         let hue = Math.random() * 360;
 
         function reset(){
-            console.log('trying to reset');
-            console.log(`number is:${number} scale is:${scale}`);
+        // console.log('trying to reset');
+        // console.log(`number is:${number} scale is:${scale}`);
         c.clearRect(0, 0, canvas.width, canvas.height);
         number = 0;
         scale = 10;
@@ -63,16 +63,22 @@ const CanvasFlower = (props) => {
         }
 
         const animate = () => {
+            if(stop){
             drawFlower();
             if (number > 250) {
                return setTimeout(() => {
                      reset();
-                }, 2000);
+                }, 50);
                 // return reset();
             }else {
-            requestAnimationFrame(animate);}
+            requestAnimationFrame(animate);}}
+        }
+        function setStop() {
+            stop = false
         }
         animate();
+
+        return setStop;
     });
 
 

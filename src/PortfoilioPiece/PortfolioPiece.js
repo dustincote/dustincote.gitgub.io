@@ -10,10 +10,15 @@ const useStyle = makeStyles({
     card:{
         marginTop: 40,
         marginBottom: 40,
-        minHeight: 300
+        minHeight: 300,
+        backgroundColor: 'rgba(0,0,0,.5)',
     },
     buttons:{
-        margin: 15
+        color:'white',
+        border: '1px solid white',
+        margin: 15,
+        textShadow: "1.5px 1.5px black"
+
     }
 })
 
@@ -36,7 +41,7 @@ function PortfolioPiece(props){
                 className={classes.media}
                 image={props.image}
             />
-            <Typography>{props.projectDescription}</Typography>
+                <Typography style={{color: 'white', textShadow: "1.5px 1.5px black"}}>{props.projectDescription}</Typography>
         
                 <Button 
                 className={classes.buttons} 

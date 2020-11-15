@@ -59,7 +59,6 @@ function SideNav(props) {
     }
 
     const goBack = () => {
-        console.log('goBack was clicked');
         props.history.push('/');
     }
 

@@ -9,7 +9,8 @@ import Random from '../Random/Random';
 
 function Canvas(props) {
  const [shouldShow, setShouldShow] = useState(true);
- const [active, setActive] = useState('fibflower');
+ const [active, setActive] = useState('');
+ useEffect(()=>{setActive('fibflower'); return endFlower;},[]);
     useEffect(() => {
         window.addEventListener('resize', sizeListener);
 
@@ -18,6 +19,10 @@ function Canvas(props) {
             window.removeEventListener('resize', sizeListener);
         }
     }, []);
+
+const endFlower = () => {
+    setActive('')
+}
 
 const sizeListener = () => {
     setShouldShow(false);
