@@ -63,7 +63,7 @@ export default  function Portfolio(props) {
     const projects = [
         {
             name:'Herdsman',
-            image: "/herdsman.png",
+            image: "herdsman.png",
             description: 'Herdsman, A herd management system for ranchers',
             url: "https://herdsman.herokuapp.com/#/home",
             github: "https://github.com/dustincote/eda-solo-project"
@@ -71,21 +71,21 @@ export default  function Portfolio(props) {
 
         {
             name: 'Html5 Canvas Fun',
-            image: "/canvasfun.png",
+            image: "canvasfun.png",
             description: 'Just some fun with Canvas',
             url: "/canvas",
             github: "none"
         },
         {
             name: 'Image Gallery',
-            image: "/imagegallery.png",
+            image: "imagegallery.png",
             description: 'First ever react App',
             url: "/https://ancient-spire-49988.herokuapp.com/",
             github: "https://github.com/dustincote/image-gallery"
         },
         {
             name: 'ToDo app',
-            image: "/todoapp.png",
+            image: "todoapp.png",
             description: 'Simple Jquery ToDo App',
             url: "https://intense-savannah-07225.herokuapp.com/",
             github: "https://github.com/dustincote?tab=repositories"
@@ -120,7 +120,7 @@ export default  function Portfolio(props) {
                     
                         <Card className={classes.root} style={{height:size.height, position:'fixed', top:0, maxWidth: 300}}>
                         <Grid item xs={10}>
-                            <Avatar alt="Headshot" src="/headshot.jpg" className={classes.media}/>
+                            <Avatar alt="Headshot" src="headshot.jpg" className={classes.media}/>
                             <CardContent>
                                 <Typography variant='h3' className={classes.name}>Dustin Cote</Typography>
                                 <Typography className={classes.body}>Full Stack Developer</Typography><br/>
