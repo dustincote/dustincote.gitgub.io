@@ -1,24 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import CanvasFlower from './CanvasFlower/CanvasFlower';
+import Portfolio from './Home/Portfolio';
+import Canvas from './Canvas/Canvas';
+import {
+  HashRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Switch>
+        <Route
+        exact
+        path="/"
         >
-          Learn React
-        </a>
-      </header>
+            <Portfolio />
+
+          {/* <CanvasFlower /> */}
+        </Route>
+
+        <Route path="/canvas">
+          <Canvas />
+        </Route>
+      </Switch>
     </div>
+    </Router>
   );
 }
 
