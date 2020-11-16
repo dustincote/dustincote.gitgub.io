@@ -71,7 +71,7 @@ export default function HomeNav(props) {
                             maxWidth: size.width > 900 ? 300 : size.width
                         }}>
                         <Grid item xs={10}>
-                            <Avatar alt="Headshot" src="headshot.jpg" className={classes.media} />
+                            <Avatar alt="Headshot" src="headshot.jpeg" className={classes.media} />
                             <CardContent>
                                 <Typography variant='h3' className={classes.name}>Dustin Cote</Typography>
                                 <Typography className={classes.body}>Full Stack Developer</Typography><br />

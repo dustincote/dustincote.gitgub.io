@@ -10,6 +10,7 @@ import Avatar from '@material-ui/core/Avatar';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Button from '@material-ui/core/Button';
 import { CardActions } from '@material-ui/core';
+import swal from 'sweetalert';
 
 const useStyles = makeStyles({
     root: {
@@ -34,6 +35,11 @@ const useStyles = makeStyles({
         marginTop: 40,
         height: 200,
         width: 200,
+    },
+    nav:{
+        margin: 15,
+        color:'black',
+        width: 80,
     },
 });
 
@@ -62,32 +68,51 @@ function SideNav(props) {
         props.history.push('/');
     }
 
+    const changeDrawing = (event) => {
+      let name=event.currentTarget.name
+        // console.log('event.target.name:', event.target.name,'event.currentTarget.name',event.currentTarget.name);
+        if (event.currentTarget.name === 'tree') {
+            swal({
+                title: "Longer Render Time",
+                text: "Just wanted to let you know that the tree takes a little while to render, it is not broken.",
+                timer: 2000,
+                buttons:false}).then(()=> {
+                    props.setActive(name);
+                })
+        } else {props.setActive(event.currentTarget.name);}
+    }
+
     return (
 
         <div>
-            <Grid container wrap='nowrap' justify='flex-start' alignItems='center' >
+            {size.width>900? <Grid container wrap='nowrap' justify='flex-start' alignItems='center' >
                 <Grid item xs={8} sm={5} md={4} lg={2} align='center'>
 
                     <Card className={classes.root} style={{ height: size.width>900?size.height:'auto'}}>
                         <Grid item xs={10}>
-                            <Avatar alt="Headshot" src="headshot.jpg" className={classes.media} />
+                            <Avatar alt="Headshot" src="headshot.jpeg" className={classes.media} />
                             <CardContent>
                                 <Typography variant='h3' className={classes.name}>Dustin Cote</Typography>
                                 <Typography className={classes.body}>Full Stack Developer</Typography>
                                 <Typography className={classes.body}>DustinCote@hotmail.com</Typography><br/>
-                                <Typography className={classes.body}>The tree will take a while to render</Typography><br/>
 
                                 
                             </CardContent>
-                                <Button className={classes.goback} onClick={() => props.setActive('fibflower')} variant='contained' > Spiral</Button><br /><br />
-                                <Button className={classes.goback} onClick={() => props.setActive('tree')} variant='contained' > Tree</Button><br /><br />
-                                <Button className={classes.goback} onClick={() => props.setActive('random')} variant='contained' > Random</Button><br /><br />
+                                <Button className={classes.goback} name='fibflower' onClick={changeDrawing} variant='contained' > Spiral</Button><br /><br />
+                                <Button className={classes.goback} name='tree' onClick={changeDrawing} variant='contained' > Tree</Button><br /><br />
+                                <Button className={classes.goback} name='random' onClick={changeDrawing} variant='contained' > Random</Button><br /><br />
                                 <Button className={classes.goback} onClick={goBack} variant='contained' ><ArrowBackIcon/> Back</Button>
-                            
                         </Grid>
                     </Card>
                 </Grid>
-            </Grid>
+            </Grid>: 
+            <div className='canvas-buttons'>
+            <Button className={classes.nav} name='fibflower' onClick={changeDrawing} variant='contained' > Spiral</Button>
+                                <Button className={classes.nav} name='tree' onClick={changeDrawing} variant='contained' > Tree</Button>
+                                <Button className={classes.nav} name='random' onClick={changeDrawing} variant='contained' > Random</Button>
+                                <Button className={classes.nav} onClick={goBack} variant='contained' ><ArrowBackIcon/> Back</Button>
+                                </div>
+            }
         </div>
     );
 }

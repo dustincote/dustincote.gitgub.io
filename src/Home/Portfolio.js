@@ -64,7 +64,7 @@ export default  function Portfolio(props) {
     const projects = [
         {
             name:'Herdsman',
-            image: "herdsman.png",
+            image: "herdsman.jpeg",
             description: 'Herdsman, A herd management system for ranchers',
             url: "https://herdsman.herokuapp.com/#/home",
             github: "https://github.com/dustincote/eda-solo-project"
@@ -72,21 +72,21 @@ export default  function Portfolio(props) {
 
         {
             name: 'Html5 Canvas Fun',
-            image: "canvasfun.png",
+            image: "canvasfun.jpeg",
             description: 'Just some fun with Canvas',
             url: "/canvas",
             github: "none"
         },
         {
             name: 'Image Gallery',
-            image: "imagegallery.png",
+            image: "imagegallery.jpeg",
             description: 'First ever react App',
             url: "/https://ancient-spire-49988.herokuapp.com/",
             github: "https://github.com/dustincote/image-gallery"
         },
         {
             name: 'ToDo app',
-            image: "todoapp.png",
+            image: "todoapp.jpeg",
             description: 'Simple Jquery ToDo App',
             url: "https://intense-savannah-07225.herokuapp.com/",
             github: "https://github.com/dustincote?tab=repositories"
