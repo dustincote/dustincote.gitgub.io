@@ -101,6 +101,7 @@ function SideNav(props) {
                                 <Button className={classes.goback} name='fibflower' onClick={changeDrawing} variant='contained' > Spiral</Button><br /><br />
                                 <Button className={classes.goback} name='tree' onClick={changeDrawing} variant='contained' > Tree</Button><br /><br />
                                 <Button className={classes.goback} name='random' onClick={changeDrawing} variant='contained' > Random</Button><br /><br />
+                                <Button className={classes.goback} name='awesome' onClick={changeDrawing} variant='contained' >Rain</Button><br /><br />
                                 <Button className={classes.goback} onClick={goBack} variant='contained' ><ArrowBackIcon/> Back</Button>
                         </Grid>
                     </Card>
@@ -110,6 +111,7 @@ function SideNav(props) {
             <Button className={classes.nav} name='fibflower' onClick={changeDrawing} variant='contained' > Spiral</Button>
                                 <Button className={classes.nav} name='tree' onClick={changeDrawing} variant='contained' > Tree</Button>
                                 <Button className={classes.nav} name='random' onClick={changeDrawing} variant='contained' > Random</Button>
+                                <Button className={classes.nav} name='awesome' onClick={changeDrawing} variant='contained' >Rain</Button>
                                 <Button className={classes.nav} onClick={goBack} variant='contained' ><ArrowBackIcon/> Back</Button>
                                 </div>
             }
