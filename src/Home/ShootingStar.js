@@ -19,7 +19,7 @@ useEffect( () => {
         constructor(x, y) {
             this.x = x;
             this.y = y;
-            this.size = Math.random() * 1.5;
+            this.size = Math.random();
             this.weight = Math.random() * 6+2;
             this.directionX = -5;
 
